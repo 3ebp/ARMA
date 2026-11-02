@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Модель в HTML</title>
+    
+    <!-- 1. Подключаем библиотеку model-viewer -->
+    <script type="module" src="https://googleapis.com"></script>
+    
+    <style>
+        /* Задаем размеры контейнера для 3D-модели */
+        model-viewer {
+            width: 100%;
+            height: 500px;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Моя 3D модель</h1>
+
+    <!-- 2. Выводим GLB модель -->
+    <model-viewer 
+        src="https://raw.githubusercontent.com/ARMA/master/model.glb" 
+        alt="Описание моей 3D модели" 
+        auto-rotate 
+        camera-controls>
+    </model-viewer>
+
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+</body>
+</html>
