@@ -28,8 +28,12 @@
 </head>
 <body>
 
-    <h1>Офис Арма. 3 этаж</h1>
+    <h1>Офис Арма</h1>
 
+    <div class="controls">
+    <button id="toggle-btn">Перейти на 2 этаж</button>
+    </div>
+    
     <!-- 2. Выводим GLB модель -->
     <model-viewer 
         id="viewer"
@@ -46,9 +50,7 @@
         camera-controls>
     </model-viewer>
      
-    <div class="controls">
-        <button id="toggle-btn">Перейти на 2 этаж</button>
-    </div>
+ 
 
     <script>
         const viewer = document.getElementById('viewer');
