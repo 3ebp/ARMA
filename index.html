@@ -15,6 +15,15 @@
             height: 960px;
             background-color: #ffffff;
         }
+        .controls {
+            text-align: center;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -23,7 +32,8 @@
 
     <!-- 2. Выводим GLB модель -->
     <model-viewer 
-        src="model.glb" 
+        id="viewer"
+        src="3floor.glb" 
         alt="3 этаж"
          camera-controls
         min-camera-orbit="auto auto 0m"
@@ -35,6 +45,30 @@
         touch-action="pan-y"
         camera-controls>
     </model-viewer>
+     
+    <div class="controls">
+        <button id="toggle-btn">Перейти на 2 этаж</button>
+    </div>
+
+    <script>
+        const viewer = document.getElementById('viewer');
+        const button = document.getElementById('toggle-btn');
+
+        // Пути к вашим файлам
+        const model1 = "3floor.glb";
+        const model2 = "2floor.glb";
+
+        button.addEventListener('click', () => {
+            // Проверяем, какая модель сейчас загружена, и меняем атрибут src
+            if (viewer.getAttribute('src') === model1) {
+                viewer.setAttribute('src', model2);
+                button.textContent = "Перейти на 3 этаж";
+            } else {
+                viewer.setAttribute('src', model1);
+                button.textContent = "Перейти на 2 этаж";
+            }
+        });
+    </script>
 
 <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.4.0/model-viewer.min.js"></script>
 </body>
